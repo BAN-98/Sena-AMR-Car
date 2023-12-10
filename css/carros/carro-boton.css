@@ -1,0 +1,13 @@
+.carro__boton{
+    background:#1f83da;
+    border: none;
+    border-radius: 5px;
+    color: #fdfdfd;
+    padding: 1rem;
+    transition: all .1s ease-in-out ;
+}
+
+.carro__boton:hover{
+    cursor: pointer;
+    background: #10779f;
+}
