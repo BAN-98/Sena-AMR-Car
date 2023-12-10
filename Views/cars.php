@@ -32,6 +32,7 @@
                 <li class="menu__item"><a class="menu__link" href="">Carros</a></li>
                 <li class="menu__item"><a class="menu__link" href="">Quienes Somos</a></li>
                 <li class="menu__item"><a class="menu__link" href="">Contacto</a></li>
+                <li class="menu__item"><a class="menu__link" href="Admin.php">Admin</a></li>
             </ul>
         </nav>
     </header>
