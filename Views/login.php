@@ -19,7 +19,7 @@
                 <a href="SingUp.php">Sing Up</a>
             </div>
             <input type="hidden" name="action" value="login">
-            <input type="submit" id='login' value="Login">
+            <input type="submit" id='loginForm' value="Login">
 
         </form>
 

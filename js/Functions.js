@@ -30,7 +30,6 @@ const requestFunctions = {
         text: `${message.success}`,
         icon: "success",
       }).then((result) => {
-
         /* Redireccionamiento segun el contenido del mensaje */
         result.value && message.redirection
           ? (window.location.href = message.redirection)
@@ -40,8 +39,26 @@ const requestFunctions = {
       Swal.fire({
         icon: "error",
         title: "Oops...",
-        text: `${message.error}`,
+        text: `${message.err}`,
       });
+    }
+  },
+
+  renderView: async (viewName) => {
+    try {
+      let element = await fetch(`../Controllers/main.php?action=${viewName}`, {
+        method: "GET",
+      });
+
+      /* Validacion de las respuestas */
+      if (!element.ok) {
+        throw new Error("Error en la autenticación: " + response.status);
+      }
+
+      /* Retornadode respuestas en formato JSON */
+      return await element.json();
+    } catch (error) {
+      throw new Error("Error en la solicitud: " + error.message);
     }
   },
 };

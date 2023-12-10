@@ -37,6 +37,11 @@ try {
             /* Uso de la funcion de la instancia de la clase */
             $userController->createUser($_REQUEST);
             break;
+
+        case 'listaUsuarios':
+            $userController = new UserController($userModel = new UserModel);
+            $userController->getUsers();
+            break;
     }
 } catch (\Throwable $th) {
     echo $th->getMessage();

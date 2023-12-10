@@ -5,6 +5,7 @@ namespace ADSO\Models;
 
 /* llamado al namespace de la conexion */
 
+use Exception;
 use Model\Conection\DB;
 use PDO;
 
@@ -64,6 +65,17 @@ class UserModel
             return false;
         } catch (\PDOException $th) {
             die("Error al crear el usuario");
+        }
+    }
+
+    public function get()
+    {
+        try {
+            $stmt = DB::connect()->prepare("SELECT * FROM amr_clients ");
+            $stmt->execute();
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        } catch (\PDOException $e) {
+            throw new Exception("Error Processing Request", 57);
         }
     }
 }

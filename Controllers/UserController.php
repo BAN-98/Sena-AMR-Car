@@ -4,9 +4,11 @@
 namespace ADSO\Models;
 
 /* Llamado a la clase Usermodel (namespace)*/
+
 use ADSO\Models\UserModel;
 
 /* inicializacion de La clase */
+
 class UserController
 {
     /* Variable a que hara de instancia de la clase UsuarioModel */
@@ -30,5 +32,11 @@ class UserController
         } else {
             echo json_encode(['error' => 'User creation failed']);
         }
+    }
+
+    public function getUsers()
+    {
+        $data = $this->userModel->get();
+        echo json_encode($data);
     }
 }
